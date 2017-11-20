@@ -29,8 +29,17 @@ class sampleForTestUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        XCTAssertTrue(app/*@START_MENU_TOKEN@*/.staticTexts["welcomeLabel"]/*[[".staticTexts[\"Welcom I am run by a test Bot\"]",".staticTexts[\"welcomeLabel\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
+        sleep(2)
+        app/*@START_MENU_TOKEN@*/.buttons["nextButton"]/*[[".buttons[\"NEXT\"]",".buttons[\"nextButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        XCTAssertTrue(app/*@START_MENU_TOKEN@*/.staticTexts["secondLabel"]/*[[".staticTexts[\"This is the second screen\"]",".staticTexts[\"secondLabel\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.exists)
+        sleep(2)
+        app/*@START_MENU_TOKEN@*/.buttons["previousButton"]/*[[".buttons[\"PREVIOUS\"]",".buttons[\"previousButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+                
     }
     
 }
